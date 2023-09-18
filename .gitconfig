@@ -1,0 +1,27 @@
+[user]
+	email = pradhandebayan@gmail.com
+	name = Debayan Pradhan
+[alias]
+	br = branch
+	st = status
+	c = commit -m
+	sw = switch
+	co = checkout
+	rfl = reflog
+	last = log -1 HEAD --stat
+	rv = remote -v
+	cob = checkout -b
+
+	sth = stash
+	stl = stash list
+
+
+
+	d = diff
+	ds = diff --stat
+	dc = diff --cached
+
+
+	dv = difftool -t vimdiff -t
+	gl = config --global -l
+	puo = pull origin

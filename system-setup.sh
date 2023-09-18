@@ -11,7 +11,7 @@ echo "enabling bluetooth"
 sudo systemctl enable bluetooth
 
 echo "installing rust, go"
-sudo pacman -S rust go
+sudo pacman -S rust go zig
 
 echo "installing developement setup packages"
 sudo pacman -S nodejs-lts-hydrogen npm yarn pnpm 
@@ -34,6 +34,27 @@ curl -fsSL https://bun.sh/install | bash
 
 echo "installing security tools"
 sudo pacman -S aircrack-ng macchanger arp-scan bettercap net-tools p7zip wireshark-cli 
+
+echo "installing solana'
+sh -c "$(curl -sSfL https://release.solana.com/v1.16.13/install)"
+
+echo "installing and setting up tauri"
+sudo pacman -Syu
+sudo pacman -S --needed \
+    webkit2gtk \
+    base-devel \
+    curl \
+    wget \
+    file \
+    openssl \
+    appmenu-gtk-module \
+    gtk3 \
+    libappindicator-gtk3 \
+    librsvg \
+    libvips
+curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
+rustup update
+
 
 echo "installing yay"
 git clone https://aur.archlinux.org/yay.git
