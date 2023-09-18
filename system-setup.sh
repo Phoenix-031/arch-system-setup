@@ -55,6 +55,12 @@ sudo pacman -S --needed \
 curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf | sh
 rustup update
 
+echo "installing and setting up flutter"
+sudo pacman -S clang ninja
+wget https://storage.googleapis.com/flutter_infra_release/releases/stable/linux/flutter_linux_3.13.4-stable.tar.xz
+mkdir .flutter
+tar -xvf flutter_linux_3.13.4-stable.tar.xz -C .flutter
+
 
 echo "installing yay"
 git clone https://aur.archlinux.org/yay.git
@@ -118,6 +124,10 @@ sudo pacman -Syu sublime-text
 
 
 echo "installing and setting up android studio"
+wget https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip
+mkdir ~/Android
+mkdir ~/Android/Sdk
+unzip commandlinetools-linux-10406996_latest.zip -d ~/Android/Sdk
 sudo pacman -S android-tools android-udev android-sdk android-sdk-build-tools android-sdk-platform-tools android-platform android-emulator
 yay -S android-studio
 
